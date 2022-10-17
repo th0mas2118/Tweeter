@@ -48,6 +48,10 @@ $db->bootEloquent();
 // $list_tweet=$a->liked()->get();
 // echo $list_tweet;
 
-// $a=User::select()->where('id','=','10')->first();
-// $list_follow=$a->followedBy()->get();
-// echo $list_follow;
+$a=User::select()->where('id','=','9')->first();
+$list_follow=$a->followedBy()->get();
+echo $list_follow;
+
+$a=User::select()->where('id','=','9')->first();
+$list_followed=$a->follows()->get();
+echo $list_follow;
