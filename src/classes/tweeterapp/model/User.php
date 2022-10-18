@@ -17,6 +17,6 @@ class User extends \Illuminate\Database\Eloquent\Model{
         return $this->belongsToMany('\iutnc\tweeterapp\model\User','\iutnc\tweeterapp\model\Follow','followee','follower');//ou inverse
     }
     public function follows(){
-        return $this->belongsToMany('\iutnc\tweeterapp\model\User','\iutnc\tweeterapp\model\Follow','followeR','followee');//ou inverse
+        return $this->belongsToMany('\iutnc\tweeterapp\model\User','\iutnc\tweeterapp\model\Follow','follower','followee');//ou inverse
     }
 }
