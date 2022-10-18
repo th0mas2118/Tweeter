@@ -14,13 +14,13 @@ $db->setAsGlobal();
 $db->bootEloquent();
 
 
-/*<-------ERREUR---------------------------->
+/*
 $t = new Tweet();
 $t->text='ce tweet va tuer';
-$t->author='Toto';
+$t->author=11;
 $t->score=0;
 $t->save();
-<-------ERREUR---------------------------->
+*/
 
 /*<-------Test des différentes méthode première partie Modèle------->
 $u=new User();
@@ -58,3 +58,26 @@ $b=User::select()->where('id','=','10')->first();
 $list_followed=$b->follows()->get();
 echo $list_followed;
 <-------Test des différentes méthode première partie Modèle------->*/
+
+/*<------Test des différent controle-------------------------------->
+$ctrl = new \iutnc\tweeterapp\control\HomeController();
+$ctrl->execute();
+
+$ctrl1 = new \iutnc\tweeterapp\control\TweetController();
+$ctrl1->execute();
+
+$ctrl2 = new \iutnc\tweeterapp\control\UserController();
+$ctrl2->execute();
+<------Test des différent controle-------------------------------->*/
+$router = new \iutnc\mf\router\Router();
+
+$router->addRoute('home', 'list_tweets',      '\iutnc\tweeterapp\control\HomeController');
+$router->addRoute('view', 'view_tweet',       '\iutnc\tweeterapp\control\TweetController');
+$router->addRoute('user', 'view_user_tweets', '\iutnc\tweeterapp\control\UserController');
+
+$router->setDefaultRoute('list_tweets');
+
+// print_r(\iutnc\mf\router\Router::$routes);
+// print_r(\iutnc\mf\router\Router::$aliases);
+
+$router->run();
