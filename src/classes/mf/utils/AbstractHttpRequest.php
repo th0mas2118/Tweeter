@@ -1,5 +1,5 @@
 <?php
-
+namespace iutnc\mf\utils;
 abstract class AbstractHttpRequest {
 
     protected ?string $script_name = null;
@@ -10,7 +10,7 @@ abstract class AbstractHttpRequest {
     protected array $post = [];
         
     public function __get($attr_name) {
-        if (property_exists( $this, $attr_name)) 
+        if (property_exists( $this, $attr_name))
             return $this->$attr_name;
         $emess = __CLASS__ . ": unknown member $attr_name (__get)";
         throw new \Exception($emess);

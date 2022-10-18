@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '1857e688b5821be3db74839d00752320dbd3abb5',
         'name' => 'iutnc/tweeter-app',
         'dev' => true,
     ),
@@ -83,12 +83,12 @@
             'dev_requirement' => false,
         ),
         'iutnc/tweeter-app' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '1857e688b5821be3db74839d00752320dbd3abb5',
             'dev_requirement' => false,
         ),
         'nesbot/carbon' => array(
