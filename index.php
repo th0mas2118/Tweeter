@@ -77,7 +77,10 @@ $router->addRoute('user', 'view_user_tweets', '\iutnc\tweeterapp\control\UserCon
 
 $router->setDefaultRoute('list_tweets');
 
-// print_r(\iutnc\mf\router\Router::$routes);
+//  print_r(\iutnc\mf\router\Router::$routes);
+//  echo "<br>";
 // print_r(\iutnc\mf\router\Router::$aliases);
 
 $router->run();
+//$router->executeRoute("home");
+$toto =$router->urlFor("home");
