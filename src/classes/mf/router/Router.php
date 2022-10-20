@@ -13,14 +13,19 @@ class Router extends AbstractRouter{
     }
     
     public function run():void{
+        $def=self::$aliases['default'];
         if(!isset($this->request->get['action']) || $this->request->get['action']==='' ){
-            $ctrl = new \iutnc\tweeterapp\control\HomeController();
+            $ctrl = new self::$routes[$def];
             $ctrl->execute();
         }
         else{
             $action=$this->request->get['action'];
             if(isset(self::$routes[$action])){
                 $ctrl = new self::$routes[$action];
+                $ctrl->execute();
+            }
+            else{
+                $ctrl = new self::$routes[$def];
                 $ctrl->execute();
             }
         }
@@ -31,13 +36,12 @@ class Router extends AbstractRouter{
         $ctrl->execute();
     }
     public function urlFor(string $name,array $params=[]):string{
-        $res=$_SERVER['SCRIPT_NAME'];
+        $res=$this->request->script_name;
         $res.="?action=";
         $action=self::$aliases[$name];
         $res.=$action;
         foreach($params as $i){
-            $res.='&id=';
-            $res.=$i[1];
+            $res.="&amp;${i[0]}=${i[1]}";
         }
         return $res;
     }
