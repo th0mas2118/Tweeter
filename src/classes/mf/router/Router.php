@@ -14,7 +14,7 @@ class Router extends AbstractRouter{
     
     public function run():void{
         if(!isset($this->request->get['action']) || $this->request->get['action']==='' ){
-            $ctrl = new \iutnc\tweeterapp\control\HomeController();<a href=\"$url_user\">
+            $ctrl = new \iutnc\tweeterapp\control\HomeController();
             $ctrl->execute();
         }
         else{
