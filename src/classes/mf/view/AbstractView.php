@@ -100,9 +100,6 @@ abstract class AbstractView {
      * Retourne le contenu HTML de la balise body autrement dit le
      * contenu du document. 
      *
-     * Elle prend un sélecteur en paramètre dont la valeur indique
-     * quelle vue il faut générer.
-     * 
      * Note : cette méthode est à définir dans les classes concrètes
      * des vues, elle est appelée depuis la méthode render ci-dessous.
      * 

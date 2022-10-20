@@ -77,6 +77,7 @@ $router = new \iutnc\mf\router\Router();
 $router->addRoute('home', 'list_tweets',      '\iutnc\tweeterapp\control\HomeController');
 $router->addRoute('view', 'view_tweet',       '\iutnc\tweeterapp\control\TweetController');
 $router->addRoute('user', 'view_user_tweets', '\iutnc\tweeterapp\control\UserController');
+$router->addRoute('new', 'new_tweet', '\iutnc\tweeterapp\control\PostController');
 
 $router->setDefaultRoute('list_tweets');
 
