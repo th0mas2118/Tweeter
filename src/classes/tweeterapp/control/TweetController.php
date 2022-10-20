@@ -14,17 +14,13 @@ class TweetController extends AbstractController{
         $date=$t['created_at'];
         $score=$t['score'];
         $r=new Router();
-        $url=$r->urlFor('home');
-        $url1=$r->urlFor('user');
-        $url1.="&id=1";
+        $url_user=$r->urlFor('user',[['id',$t->author()->first()['id']]]);
         $res="
             <div>
                 <span>$text</span><br>
-                <span style=\"font-weight:bold;\">$author</span><br>
+                <span style=\"font-weight:bold;\"> <a href=\"$url_user\">$author</a> </span><br>
                 <span>$date</span><br>
                 <span>$score</span><br>
-                <span><a href=\"$url\">Tweets</a></span>
-                <span><a href=\"$url1\">Tweet</a></span>
             </di>";
             echo $res;
     }

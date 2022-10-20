@@ -5,6 +5,7 @@ namespace iutnc\tweeterapp\control;
 use \iutnc\tweeterapp\model\Tweet;
 use \iutnc\tweeterapp\model\User;
 use \iutnc\mf\control\AbstractController;
+use \iutnc\mf\router\Router;
 
 class UserController extends AbstractController{
     public function execute():void{
@@ -25,9 +26,11 @@ class UserController extends AbstractController{
             $text=$t['text'];
             $author=$t->author()->first()['username'];
             $date=$t['created_at'];
+            $r=new Router();
+            $url_tweet=$r->urlFor('view',[['id',$t['id']]]);
             $res.="
                 <div>
-                    <span>$text</span>
+                    <span><a href=\"$url_tweet\">$text</a></span>
                     <span style=\"font-weight:bold;\">$author</span>
                     <span>$date</span>
                     <br><br>
