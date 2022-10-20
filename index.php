@@ -5,6 +5,7 @@ use \iutnc\tweeterapp\model\User;
 use \iutnc\tweeterapp\model\Follow;
 use \iutnc\tweeterapp\model\Tweet;
 use \iutnc\tweeterapp\model\Like;
+use iutnc\mf\view\AbstractView;
 
 $config=parse_ini_file("./conf/config.ini");
 
@@ -69,6 +70,8 @@ $ctrl1->execute();
 $ctrl2 = new \iutnc\tweeterapp\control\UserController();
 $ctrl2->execute();
 <------Test des différent controle-------------------------------->*/
+AbstractView::addStyleSheet('src/css/style.css');
+//AbstractView::addStyleSheet('src/css/all.min.css');
 $router = new \iutnc\mf\router\Router();
 
 $router->addRoute('home', 'list_tweets',      '\iutnc\tweeterapp\control\HomeController');

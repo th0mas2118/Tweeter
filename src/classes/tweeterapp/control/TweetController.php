@@ -13,6 +13,7 @@ class TweetController extends AbstractController{
         $t=Tweet::select()->where('id','=',$id)->first();
         $tv=new TweetView($t);
         $tv->makePage();
+        //Ancienne version avant vue
         // $text=$t['text'];
         // $author=$t->author()->first()['username'];
         // $date=$t['created_at'];
