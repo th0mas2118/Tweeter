@@ -101,6 +101,13 @@ article h3 {
 
 
 /* le contenu des tweet  */
+.name{
+    font-weight: bold;
+}
+    .toto{
+        display: flex;
+        flex-direction: column;
+    }
 ul{
     list-style-type: none;
 }
