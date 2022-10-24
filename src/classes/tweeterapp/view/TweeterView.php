@@ -10,10 +10,9 @@ abstract class TweeterView extends AbstractView{
         $list=$this->render();
         $body="
             <header>
-                <div>MiniTweeTR</div>
-                <nav><a class=\"tweet-controls\" href=\"$url\"><i class=\"fa-solid fa-house\"></i></a><a><i class=\"fa-solid fa-arrow-right-to-bracket\"></i>
-
-                </a><a><i class=\"fa-solid fa-plus\"></i></a></nav>
+                <h1>MiniTweeTR</h1>
+                <nav id=\"navbar\"><a class=\"tweet-controls\" href=\"$url\"><i class=\"fa-solid fa-house\"></i></a><a  class=\"tweet-controls\" ><i class=\"fa-solid fa-arrow-right-to-bracket\"></i>
+                </a><a  class=\"tweet-controls\" ><i class=\"fa-solid fa-plus\"></i></a></nav>
             </header>
             <section>
                 ${list}
