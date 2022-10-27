@@ -2,7 +2,7 @@
 
 namespace iutnc\mf\auth;
 
-use \iutnc\mf\exceptions as E;
+use \iutnc\mf\exceptions\AuthentificationException as E;
 
 abstract class AbstractAuthentification {
 
@@ -93,6 +93,7 @@ abstract class AbstractAuthentification {
          */
         
          if(isset($_SESSION['user_profile']['id'])){
+            echo $requested;
             if($requested>$_SESSION['user_profile']['acces_level']){
                 return false;
             }
@@ -132,7 +133,7 @@ abstract class AbstractAuthentification {
          *       Soulever une exception
          *   sinon le hacher et retourner son empreinte
          */
-        if($password.length>=self::MIN_PASSWORD_LENGTH){
+        if(!strlen($password)>=self::MIN_PASSWORD_LENGTH){
             throw new E('Password too small');
         }
         else{

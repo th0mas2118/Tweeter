@@ -5,7 +5,8 @@ use \iutnc\tweeterapp\model\User;
 use \iutnc\tweeterapp\model\Follow;
 use \iutnc\tweeterapp\model\Tweet;
 use \iutnc\tweeterapp\model\Like;
-use iutnc\mf\view\AbstractView;
+use \iutnc\mf\view\AbstractView;
+use \iutnc\tweeterapp\auth\TweeterAuthentification;
 
 $config=parse_ini_file("./conf/config.ini");
 
@@ -75,10 +76,11 @@ AbstractView::setAppTitle('Mini TweeTR');
 //AbstractView::addStyleSheet('src/css/all.min.css');
 $router = new \iutnc\mf\router\Router();
 
-$router->addRoute('home', 'list_tweets',      '\iutnc\tweeterapp\control\HomeController');
-$router->addRoute('view', 'view_tweet',       '\iutnc\tweeterapp\control\TweetController');
-$router->addRoute('user', 'view_user_tweets', '\iutnc\tweeterapp\control\UserController');
-$router->addRoute('post', 'post_tweet', '\iutnc\tweeterapp\control\PostController');
+$router->addRoute('home', 'list_tweets',      '\iutnc\tweeterapp\control\HomeController',-9999);
+$router->addRoute('view', 'view_tweet',       '\iutnc\tweeterapp\control\TweetController',-9999);
+$router->addRoute('user', 'view_user_tweets', '\iutnc\tweeterapp\control\UserController',-9999);
+$router->addRoute('signeup', 'signeup', '\iutnc\tweeterapp\control\SignupController',-9999);
+$router->addRoute('post', 'post_tweet', '\iutnc\tweeterapp\control\PostController',TweeterAuthentification::ACCES_LEVEL_USER);
 
 $router->setDefaultRoute('list_tweets');
 

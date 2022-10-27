@@ -1,7 +1,8 @@
 <?php
 
-namespace iutnc\tweetrapp\auth;
+namespace iutnc\tweeterapp\auth;
 use \iutnc\mf\auth\AbstractAuthentification;
+use \iutnc\mf\exceptions\AuthentificationException as E;
 use \iutnc\tweeterapp\model\User;
 
 class TweeterAuthentification extends AbstractAuthentification{
@@ -10,20 +11,23 @@ class TweeterAuthentification extends AbstractAuthentification{
     /* constant niveau d'accès administrateur */
     const ACCES_LEVEL_ADMIN = 1000;
 
-    protected static function register(string $username, string $password, string $fullname, $level=self::ACCES_LEVEL_USER):void{
-        if((User::find($username))){
+    public static function register(string $username, string $password, string $fullname, $level=self::ACCES_LEVEL_USER):void{
+        if((User::where('username','=',$username)->first())){
             throw new E('Username already taken');
         }
         else{
+            echo 'nope2';
             $user=new User();
-            $uset->fullname=$fullname;
-            $uset->username=$username;
-            $uset->password=self::makePassword($password);
-            $uset->level=$level;
+            $user->fullname=$fullname;
+            $user->username=$username;
+            $user->password=self::makePassword($password);
+            $user->level=$level;
+            $user->followers=0;
+            $user->save();
         }
     }
 
-    protected static function login(stirng $username, string $password):void{
+    public static function login(stirng $username, string $password):void{
         $user=User::find($username);
         if(!isset($user)){
             throw new E('No user found');

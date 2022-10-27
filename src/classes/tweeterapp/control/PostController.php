@@ -22,8 +22,7 @@ class PostController extends AbstractController{
             $tweet->author=1;
             $tweet->score=0;
             $tweet->save();
-            $r=new Router();
-            $r->executeRoute('home');
+            Router::executeRoute('home');
         }
     }
 }
