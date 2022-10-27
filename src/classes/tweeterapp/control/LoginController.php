@@ -4,23 +4,23 @@ namespace iutnc\tweeterapp\control;
 
 use \iutnc\mf\control\AbstractController;
 use \iutnc\mf\router\Router;
+use \iutnc\mf\auth\AbstractAuthentification;
+use \iutnc\tweeterapp\view\LoginView;
 use \iutnc\tweeterapp\auth\TweeterAuthentification;
-use \iutnc\tweeterapp\view\SignupView;
 
-class SignupController extends AbstractController{
+class LoginController extends AbstractController{
     public function execute():void{
         if($this->request->method==='GET'){
-            $sv=new SignupView();
-            $sv->makePage();
+            $lv=new LoginView();
+            $lv->makePage();
         }
         if($this->request->method==='POST'){
             $u=$this->request->post;
             try{
-                TweeterAuthentification::register($u['username'],$u['password'],$u['fullname']);
-                Router::executeRoute('home');
+                TweeterAuthentification::login($u['username'],$u['password']);
+                Router::executeRoute('following');
             }catch(e){
-                echo 'username too used';
-                Router::executeRoute('signeup');
+                Router::executeRoute('login');
             }
         }
     }

@@ -16,7 +16,6 @@ class TweeterAuthentification extends AbstractAuthentification{
             throw new E('Username already taken');
         }
         else{
-            echo 'nope2';
             $user=new User();
             $user->fullname=$fullname;
             $user->username=$username;
@@ -27,13 +26,13 @@ class TweeterAuthentification extends AbstractAuthentification{
         }
     }
 
-    public static function login(stirng $username, string $password):void{
-        $user=User::find($username);
+    public static function login(string $username, string $password):void{
+        $user=User::where('username','=',$username)->first();
         if(!isset($user)){
             throw new E('No user found');
         }
         else{
-            self::checkPassword($password,$user->password,$user->id,$user->level);
+            self::checkPassword($password,$user["password"],$user['id'],$user->level);
         }
     }
 }

@@ -7,6 +7,7 @@ use \iutnc\tweeterapp\model\Tweet;
 use \iutnc\tweeterapp\model\Like;
 use \iutnc\mf\view\AbstractView;
 use \iutnc\tweeterapp\auth\TweeterAuthentification;
+use \iutnc\mf\auth\AbstractAuthentification;
 
 $config=parse_ini_file("./conf/config.ini");
 
@@ -76,11 +77,14 @@ AbstractView::setAppTitle('Mini TweeTR');
 //AbstractView::addStyleSheet('src/css/all.min.css');
 $router = new \iutnc\mf\router\Router();
 
-$router->addRoute('home', 'list_tweets',      '\iutnc\tweeterapp\control\HomeController',-9999);
-$router->addRoute('view', 'view_tweet',       '\iutnc\tweeterapp\control\TweetController',-9999);
-$router->addRoute('user', 'view_user_tweets', '\iutnc\tweeterapp\control\UserController',-9999);
-$router->addRoute('signeup', 'signeup', '\iutnc\tweeterapp\control\SignupController',-9999);
+$router->addRoute('home', 'list_tweets',      '\iutnc\tweeterapp\control\HomeController',AbstractAuthentification::ACCESS_LEVEL_NONE);
+$router->addRoute('view', 'view_tweet',       '\iutnc\tweeterapp\control\TweetController',AbstractAuthentification::ACCESS_LEVEL_NONE);
+$router->addRoute('user', 'view_user_tweets', '\iutnc\tweeterapp\control\UserController',AbstractAuthentification::ACCESS_LEVEL_NONE);
 $router->addRoute('post', 'post_tweet', '\iutnc\tweeterapp\control\PostController',TweeterAuthentification::ACCES_LEVEL_USER);
+$router->addRoute('signeup', 'signeup', '\iutnc\tweeterapp\control\SignupController',AbstractAuthentification::ACCESS_LEVEL_NONE);
+$router->addRoute('login', 'login', '\iutnc\tweeterapp\control\LoginController',AbstractAuthentification::ACCESS_LEVEL_NONE);
+$router->addRoute('logout', 'logout', '\iutnc\tweeterapp\control\LogoutController',TweeterAuthentification::ACCES_LEVEL_USER);
+$router->addRoute('following', 'view_follwing', '\iutnc\tweeterapp\control\FollowingController',TweeterAuthentification::ACCES_LEVEL_USER);
 
 $router->setDefaultRoute('list_tweets');
 

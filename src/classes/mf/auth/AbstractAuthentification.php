@@ -172,7 +172,7 @@ abstract class AbstractAuthentification {
             throw new E('Wrong password');
         }
         else{
-            loadProfile($id,$level);
+            self::loadProfile($id,$level);
         }
         
     }
