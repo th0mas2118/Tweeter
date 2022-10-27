@@ -2,31 +2,31 @@
     "packages": [
         {
             "name": "doctrine/inflector",
-            "version": "2.0.5",
-            "version_normalized": "2.0.5.0",
+            "version": "2.0.6",
+            "version_normalized": "2.0.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "ade2b3bbfb776f27f0558e26eed43b5d9fe1b392"
+                "reference": "d9d313a36c872fd6ee06d9a6cbcf713eaa40f024"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/ade2b3bbfb776f27f0558e26eed43b5d9fe1b392",
-                "reference": "ade2b3bbfb776f27f0558e26eed43b5d9fe1b392",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/d9d313a36c872fd6ee06d9a6cbcf713eaa40f024",
+                "reference": "d9d313a36c872fd6ee06d9a6cbcf713eaa40f024",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2 || ^8.0"
             },
             "require-dev": {
-                "doctrine/coding-standard": "^9",
+                "doctrine/coding-standard": "^10",
                 "phpstan/phpstan": "^1.8",
                 "phpstan/phpstan-phpunit": "^1.1",
                 "phpstan/phpstan-strict-rules": "^1.3",
                 "phpunit/phpunit": "^8.5 || ^9.5",
                 "vimeo/psalm": "^4.25"
             },
-            "time": "2022-09-07T09:01:28+00:00",
+            "time": "2022-10-20T09:10:12+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -76,7 +76,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/inflector/issues",
-                "source": "https://github.com/doctrine/inflector/tree/2.0.5"
+                "source": "https://github.com/doctrine/inflector/tree/2.0.6"
             },
             "funding": [
                 {
@@ -96,8 +96,8 @@
         },
         {
             "name": "illuminate/collections",
-            "version": "v9.35.1",
-            "version_normalized": "9.35.1.0",
+            "version": "v9.36.4",
+            "version_normalized": "9.36.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/collections.git",
@@ -154,8 +154,8 @@
         },
         {
             "name": "illuminate/conditionable",
-            "version": "v9.35.1",
-            "version_normalized": "9.35.1.0",
+            "version": "v9.36.4",
+            "version_normalized": "9.36.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/conditionable.git",
@@ -203,8 +203,8 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v9.35.1",
-            "version_normalized": "9.35.1.0",
+            "version": "v9.36.4",
+            "version_normalized": "9.36.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -257,8 +257,8 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v9.35.1",
-            "version_normalized": "9.35.1.0",
+            "version": "v9.36.4",
+            "version_normalized": "9.36.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -308,17 +308,17 @@
         },
         {
             "name": "illuminate/database",
-            "version": "v9.35.1",
-            "version_normalized": "9.35.1.0",
+            "version": "v9.36.4",
+            "version_normalized": "9.36.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "248a5c07e42ff99efa781a0b5ac0091b2c5638ee"
+                "reference": "bed7b5b981bff908e1dd55147d05411a3b53fc52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/database/zipball/248a5c07e42ff99efa781a0b5ac0091b2c5638ee",
-                "reference": "248a5c07e42ff99efa781a0b5ac0091b2c5638ee",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/bed7b5b981bff908e1dd55147d05411a3b53fc52",
+                "reference": "bed7b5b981bff908e1dd55147d05411a3b53fc52",
                 "shasum": ""
             },
             "require": {
@@ -340,7 +340,7 @@
                 "illuminate/pagination": "Required to paginate the result set (^9.0).",
                 "symfony/finder": "Required to use Eloquent model factories (^6.0)."
             },
-            "time": "2022-10-08T20:21:25+00:00",
+            "time": "2022-10-20T14:46:17+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -379,8 +379,8 @@
         },
         {
             "name": "illuminate/macroable",
-            "version": "v9.35.1",
-            "version_normalized": "9.35.1.0",
+            "version": "v9.36.4",
+            "version_normalized": "9.36.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/macroable.git",
@@ -428,17 +428,17 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v9.35.1",
-            "version_normalized": "9.35.1.0",
+            "version": "v9.36.4",
+            "version_normalized": "9.36.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "1ca5ac4d81a9c1ad976686283c4dde80dab29333"
+                "reference": "9cb95dbb30af8ee2fba58e732c0c472f7f77ade6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/1ca5ac4d81a9c1ad976686283c4dde80dab29333",
-                "reference": "1ca5ac4d81a9c1ad976686283c4dde80dab29333",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/9cb95dbb30af8ee2fba58e732c0c472f7f77ade6",
+                "reference": "9cb95dbb30af8ee2fba58e732c0c472f7f77ade6",
                 "shasum": ""
             },
             "require": {
@@ -465,7 +465,7 @@
                 "symfony/var-dumper": "Required to use the dd function (^6.0).",
                 "vlucas/phpdotenv": "Required to use the Env class and env helper (^5.4.1)."
             },
-            "time": "2022-10-11T13:44:57+00:00",
+            "time": "2022-10-20T13:35:15+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
