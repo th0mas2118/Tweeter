@@ -71,6 +71,7 @@ $ctrl2 = new \iutnc\tweeterapp\control\UserController();
 $ctrl2->execute();
 <------Test des différent controle-------------------------------->*/
 AbstractView::addStyleSheet('src/css/style.css');
+AbstractView::setAppTitle('Mini TweeTR');
 //AbstractView::addStyleSheet('src/css/all.min.css');
 $router = new \iutnc\mf\router\Router();
 
