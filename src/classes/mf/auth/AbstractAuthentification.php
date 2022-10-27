@@ -61,14 +61,7 @@ abstract class AbstractAuthentification {
         return null;
     }
 
-    else{
-        if($requested>self::ACCESS_LEVEL_NONE){
-            return false;
-        }
-        else{
-            return true;
-        }
-    }
+
     public static function checkAccessRight(int $requested): bool{
         
         /* 
@@ -143,7 +136,7 @@ abstract class AbstractAuthentification {
             throw new E('Password too small');
         }
         else{
-            return password_hash($password,PASSWORD_BCRYPT,['cost'=>12])
+            return password_hash($password,PASSWORD_BCRYPT,['cost'=>12]);
         }
         
     }
@@ -175,10 +168,10 @@ abstract class AbstractAuthentification {
          *       charger le profile 
          */
         if(!password_verify($given_pass,$db_hash)){
-            throw new E('Wrong password')
+            throw new E('Wrong password');
         }
         else{
-            loadProfile($id,$level)
+            loadProfile($id,$level);
         }
         
     }
