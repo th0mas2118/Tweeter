@@ -29,6 +29,9 @@ class FollowController extends AbstractController{
                     Router::executeRoute('following');
                 }
             }
+            if($choice==='unfollow_user'){
+                echo 'unfollow';
+            }
         }
     }
 }
