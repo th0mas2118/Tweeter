@@ -13,14 +13,15 @@ class SignupController extends AbstractController{
             $sv=new SignupView();
             $sv->makePage();
         }
-        if($this->request->method==='POST'){
+        else{
             $u=$this->request->post;
             try{
                 TweeterAuthentification::register($u['username'],$u['password'],$u['fullname']);
                 Router::executeRoute('home');
-            }catch(e){
+            }catch(\iutnc\mf\exceptions\AuthentificationException $e){
                 echo 'username too used';
-                Router::executeRoute('signeup');
+                $this->request->method='GET';
+                $this->execute();
             }
         }
     }

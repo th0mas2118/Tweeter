@@ -19,8 +19,10 @@ class LoginController extends AbstractController{
             try{
                 TweeterAuthentification::login($u['username'],$u['password']);
                 Router::executeRoute('following');
-            }catch(e){
-                Router::executeRoute('login');
+            }catch(\iutnc\mf\exceptions\AuthentificationException $e){
+                echo 'username or password erroned';
+                $this->request->method='GET';
+                $this->execute();
             }
         }
     }
