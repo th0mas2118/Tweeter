@@ -211,6 +211,15 @@ ul{
 
 #followees li {
     list-style : none;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+}
+#followees li a{
+    grid-column: 2/3;
+}
+#followees li .button{
+    grid-column: 3/4;
 }
 #followees li a {
  text-decoration : none;

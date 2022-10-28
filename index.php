@@ -89,6 +89,7 @@ $router->addRoute('following', 'view_follwing', '\iutnc\tweeterapp\control\Follo
 $router->addRoute('like','like_tweet','\iutnc\tweeterapp\control\LikeController',TweeterAuthentification::ACCES_LEVEL_USER);
 $router->addRoute('dislike','dislike_tweet','\iutnc\tweeterapp\control\LikeController',TweeterAuthentification::ACCES_LEVEL_USER);
 $router->addRoute('follow','follow_user','\iutnc\tweeterapp\control\FollowController',TweeterAuthentification::ACCES_LEVEL_USER);
+$router->addRoute('unfollow','unfollow_user','\iutnc\tweeterapp\control\FollowController',TweeterAuthentification::ACCES_LEVEL_USER);
 
 
 $router->setDefaultRoute('list_tweets');

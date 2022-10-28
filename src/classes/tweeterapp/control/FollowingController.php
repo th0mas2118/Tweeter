@@ -10,13 +10,8 @@ use \iutnc\tweeterapp\view\FollowingView;
 class FollowingController extends AbstractController{
     public function execute():void{
         $user=User::select()->where('id','=',AbstractAuthentification::connectedUser())->first();
-        $ul=$user->follows()->get();
-        foreach($ul as $elem){
-            echo $elem;
-        }
-        if(!isset($ul)){
-        }
-        $fv=new FollowingView($ul);
+        $followee=$user->follows()->get();
+        $fv=new FollowingView($followee);
         $fv->makePage();
     }
 }
