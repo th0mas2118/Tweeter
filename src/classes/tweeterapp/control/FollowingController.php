@@ -14,6 +14,8 @@ class FollowingController extends AbstractController{
         foreach($ul as $elem){
             echo $elem;
         }
+        if(!isset($ul)){
+        }
         $fv=new FollowingView($ul);
         $fv->makePage();
     }

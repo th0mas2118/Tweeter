@@ -6,7 +6,7 @@ use \iutnc\mf\view\Renderer;
 
 class HomeView extends TweeterView implements Renderer{
     function render():string{
-        $res="<ul>";
+        $res="<ul class=\"homeUl\">";
         foreach($this->data as $t){
             $url_user=$this->router->urlFor('user',[['id',$t->author()->first()['id']]]);
             $res.="<li class=\"tweet\">{$t['text']} <span style=\"font-weight:bold;\"><a href=\"$url_user\">{$t->author()->first()['username']}</span></a> {$t['created_at']}</li>";

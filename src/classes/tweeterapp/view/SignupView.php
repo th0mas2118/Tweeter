@@ -11,8 +11,8 @@ class SignupView extends TweeterView implements Renderer{
                 <form method=post>
                     <input class="forms-text" type=text name=fullname placeholder="full name">
                     <input class="forms-text" type=text name=username placeholder="username">
-                    <input class="forms-text" type=text name=password placeholder="password">
-                    <input class="forms-text" type=text name=password-verify placeholder="retype password">
+                    <input class="forms-text" type=password name=password placeholder="password">
+                    <input class="forms-text" type=password name=password-verify placeholder="retype password">
 
                     <button class="forms-button" name=sign_button type="submit">Create</button>
                 </form>

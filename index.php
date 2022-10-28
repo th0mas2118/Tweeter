@@ -15,6 +15,7 @@ $db= new Illuminate\Database\Capsule\Manager();
 $db->addConnection($config);
 $db->setAsGlobal();
 $db->bootEloquent();
+session_start();
 
 
 /*
@@ -91,4 +92,5 @@ $router->setDefaultRoute('list_tweets');
 // //  print_r(\iutnc\mf\router\Router::$routes);
 // //  echo "<br>";
 // // print_r(\iutnc\mf\router\Router::$aliases);
+
 $router->run();

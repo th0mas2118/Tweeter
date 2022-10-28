@@ -28,11 +28,13 @@ abstract class TweeterView extends AbstractView{
             $r=new Router();
             $url=$r->urlFor('post');
             $res=<<<EOT
-            <div class="nav-menu">
-                <div class="button theme-backcolor2">
-                    <a href="{$url}">New</a>
+            <nav id="menu" class="theme-backcolor1">
+                <div id="nav-menu">
+                    <div class="button theme-backcolor2">
+                        <a href="{$url}">New</a>
+                    </div>
                 </div>
-            </div>
+            </nav>
             EOT;
             return $res;
         }
