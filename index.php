@@ -86,11 +86,11 @@ $router->addRoute('signeup', 'signeup', '\iutnc\tweeterapp\control\SignupControl
 $router->addRoute('login', 'login', '\iutnc\tweeterapp\control\LoginController',AbstractAuthentification::ACCESS_LEVEL_NONE);
 $router->addRoute('logout', 'logout', '\iutnc\tweeterapp\control\LogoutController',TweeterAuthentification::ACCES_LEVEL_USER);
 $router->addRoute('following', 'view_follwing', '\iutnc\tweeterapp\control\FollowingController',TweeterAuthentification::ACCES_LEVEL_USER);
+$router->addRoute('like','like_tweet','\iutnc\tweeterapp\control\LikeController',TweeterAuthentification::ACCES_LEVEL_USER);
+$router->addRoute('dislike','dislike_tweet','\iutnc\tweeterapp\control\LikeController',TweeterAuthentification::ACCES_LEVEL_USER);
+$router->addRoute('follow','follow_user','\iutnc\tweeterapp\control\FollowController',TweeterAuthentification::ACCES_LEVEL_USER);
+
 
 $router->setDefaultRoute('list_tweets');
-
-// //  print_r(\iutnc\mf\router\Router::$routes);
-// //  echo "<br>";
-// // print_r(\iutnc\mf\router\Router::$aliases);
 
 $router->run();

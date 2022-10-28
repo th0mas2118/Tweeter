@@ -25,15 +25,18 @@ class TweetView extends TweeterView implements Renderer{
                         <hr>
                         <span class="tweet-score tweet-conrol">{$this->data['score']}</span>
             EOT;
-        if(AbstractAuthentification::connectedUser()){
+        if(AbstractAuthentification::connectedUser() && AbstractAuthentification::connectedUser()!=$this->data->author()->first()['id']){
+            $url_like=$this->router->urlFor('like',[['id',$this->data['id']]]);
+            $url_dislike=$this->router->urlFor('dislike',[['id',$this->data['id']]]);
+            $url_follow=$this->router->urlFor('follow',[['id',$this->data->author()->first()['id']]]);
             $res.=<<<EOT
-                <a class="tweet-control" href="">
+                <a class="tweet-control" href="$url_like">
                     <img alt="like" src="src/img/like.png">
                 </a>
-                <a class="tweet-control" href="">
+                <a class="tweet-control" href="$url_dislike">
                     <img alt="dislike" src="src/img/dislike.png">
                 </a>
-                <a class="tweet-control" href="">
+                <a class="tweet-control" href="$url_follow">
                     <img alt="follow" src="src/img/follow.png">
                 </a>
                 EOT;
