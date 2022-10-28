@@ -5,6 +5,7 @@ use \iutnc\mf\control\AbstractController;
 use \iutnc\tweeterapp\view\PostView;
 use \iutnc\tweeterapp\model\Tweet;
 use \iutnc\mf\router\Router;
+use \iutnc\mf\auth\AbstractAuthentification;
 
 class PostController extends AbstractController{
     public function execute():void{
@@ -19,7 +20,7 @@ class PostController extends AbstractController{
                 return;
             }
             $tweet->text=$text['tweet'];
-            $tweet->author=1;
+            $tweet->author=AbstractAuthentification::connectedUser();
             $tweet->score=0;
             $tweet->save();
             Router::executeRoute('home');
