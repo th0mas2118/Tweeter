@@ -93,8 +93,7 @@ abstract class AbstractAuthentification {
          */
         
          if(isset($_SESSION['user_profile']['id'])){
-            echo $requested;
-            if($requested>$_SESSION['user_profile']['acces_level']){
+            if($requested>$_SESSION['user_profile']['access_level']){
                 return false;
             }
             else{
