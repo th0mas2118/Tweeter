@@ -3,7 +3,7 @@
 namespace iutnc\tweeterapp\model;
 
 class Tweet extends \Illuminate\Database\Eloquent\Model{
-    protected $table='tweet';
+    protected $table='tweeter__tweet';
     protected $primarykey='id';
     public $timestamps=true;
 

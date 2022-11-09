@@ -3,7 +3,7 @@
 namespace iutnc\tweeterapp\model;
 
 class Like extends \Illuminate\Database\Eloquent\Model{
-    protected $table='like';
+    protected $table='tweeter__like';
     protected $primarykey='id';
     public $timestamps=false;
 }
